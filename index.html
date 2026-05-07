@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MeGGu | Luxury Event Management</title>
+  <meta name="description" content="Luxury freelance event management for high-end experiences worldwide." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            noir: '#090909',
+            matte: '#111111',
+            gold: '#d4af37',
+            champagne: '#f5e6b3',
+            ember: '#8a6a16'
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Manrope', 'sans-serif']
+          },
+          boxShadow: {
+            luxe: '0 25px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(212,175,55,.28)'
+          },
+          backgroundImage: {
+            goldflow: 'linear-gradient(130deg, #f5e6b3 0%, #d4af37 40%, #8a6a16 100%)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="bg-noir text-white font-body overflow-x-hidden selection:bg-gold selection:text-black">
+  <div class="noise-layer"></div>
+
+  <header id="top" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+    <div class="mx-auto max-w-7xl px-6 py-4">
+      <nav class="glass-panel rounded-2xl px-4 md:px-7 py-3 flex items-center justify-between">
+        <a href="#top" class="font-display text-2xl md:text-3xl tracking-wide text-gold">MeGGu</a>
+        <button id="menuBtn" class="md:hidden text-champagne border border-gold/40 rounded-lg px-3 py-1">Menu</button>
+        <ul id="menu" class="hidden md:flex items-center gap-7 text-sm uppercase tracking-[0.25em] text-champagne/90">
+          <li><a href="#about" class="hover:text-gold transition">About</a></li>
+          <li><a href="#services" class="hover:text-gold transition">Services</a></li>
+          <li><a href="#gallery" class="hover:text-gold transition">Gallery</a></li>
+          <li><a href="#featured" class="hover:text-gold transition">Events</a></li>
+          <li><a href="#contact" class="hover:text-gold transition">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative min-h-screen flex items-end" id="hero">
+      <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=80">
+        <source src="https://cdn.coverr.co/videos/coverr-stage-lights-1579/1080p.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/15"></div>
+      <div class="absolute inset-0 cinematic-vignette"></div>
+
+      <div class="relative z-10 mx-auto max-w-7xl px-6 pb-20 md:pb-28 w-full">
+        <p class="eyebrow mb-4 reveal-up">Freelance Luxury Event Curator • Global Collaborations</p>
+        <h1 class="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl max-w-5xl leading-[1.03] reveal-up delay-1">
+          Cinematic Events Crafted for
+          <span class="gold-text">World-Class Moments</span>
+        </h1>
+        <p class="mt-6 max-w-2xl text-base md:text-lg text-zinc-200 reveal-up delay-2">
+          Designing immersive celebrations and corporate spectacles with elite vendors and partner companies across international destinations.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4 reveal-up delay-3">
+          <a href="#contact" class="btn-gold">Book a Consultation</a>
+          <a href="#services" class="btn-outline">Explore Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-24 md:py-32 section-fade">
+      <div class="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div class="space-y-5">
+          <p class="eyebrow">About Ahmed Magdy</p>
+          <h2 class="font-display text-4xl md:text-5xl leading-tight">Independent Vision, Powerful Network</h2>
+          <p class="text-zinc-300 leading-relaxed">
+            I am a freelance event organizer coordinating with multiple elite production houses, floral studios, hospitality groups, and creative agencies to deliver bespoke experiences.
+          </p>
+          <p class="text-zinc-300 leading-relaxed">
+            From luxury weddings to executive summits, every event is designed with cinematic detail, strategic precision, and elevated guest experience.
+          </p>
+          <div class="glass-panel rounded-2xl p-4 flex items-center gap-4 max-w-md profile-card">
+            <div class="avatar-frame w-20 h-20 rounded-full border border-gold/40 overflow-hidden shrink-0">
+              <img src="./assets-profile.jpg" alt="Ahmed Magdy profile image" class="profile-avatar w-full h-full object-cover" />
+            </div>
+            <div>
+              <p class="font-display text-2xl gold-text">Ahmed Magdy</p>
+              <p class="text-champagne/85 text-sm">Cairo, Egypt</p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-panel p-8 md:p-10 rounded-3xl shadow-luxe tilt-card">
+          <div class="grid grid-cols-2 gap-4 text-center">
+            <div>
+              <p class="font-display text-4xl gold-text">120+</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-champagne/80 mt-2">Global Events</p>
+            </div>
+            <div>
+              <p class="font-display text-4xl gold-text">35</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-champagne/80 mt-2">Partner Companies</p>
+            </div>
+            <div>
+              <p class="font-display text-4xl gold-text">14</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-champagne/80 mt-2">Countries</p>
+            </div>
+            <div>
+              <p class="font-display text-4xl gold-text">98%</p>
+              <p class="text-xs uppercase tracking-[0.2em] text-champagne/80 mt-2">Client Retention</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-24 md:py-32 section-fade">
+      <div class="mx-auto max-w-7xl px-6">
+        <p class="eyebrow text-center">Luxury Services</p>
+        <h2 class="font-display text-4xl md:text-5xl text-center max-w-3xl mx-auto mt-3">Tailored Experiences Across Every Celebration Format</h2>
+        <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="service-card tilt-card"><h3>Weddings</h3><p>Destination and local ceremonies with cinematic staging and couture design direction.</p></article>
+          <article class="service-card tilt-card"><h3>Exhibitions</h3><p>Immersive brand spaces, product storytelling, and high-footfall premium visitor flow.</p></article>
+          <article class="service-card tilt-card"><h3>Corporate Events</h3><p>Executive summits, award ceremonies, investor receptions, and leadership retreats.</p></article>
+          <article class="service-card tilt-card"><h3>Birthdays</h3><p>Signature milestone celebrations with private concepts and luxury guest curation.</p></article>
+          <article class="service-card tilt-card"><h3>Concerts</h3><p>Stage production, backstage VIP pathways, and dynamic audience atmosphere.</p></article>
+          <article class="service-card tilt-card"><h3>VIP Parties</h3><p>Highly exclusive social nights designed around privacy, prestige, and elegance.</p></article>
+          <article class="service-card tilt-card"><h3>Team Buildings</h3><p>High-impact team journeys blending strategic outcomes with unforgettable experiences.</p></article>
+          <article class="service-card tilt-card"><h3>Gatherings</h3><p>Intimate private socials where ambience, rhythm, and hospitality lead the narrative.</p></article>
+          <article class="service-card tilt-card"><h3>Luxury Private Events</h3><p>Ultra-bespoke affairs for global clientele in villas, yachts, and iconic venues.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="py-24 md:py-32 section-fade overflow-hidden">
+      <div class="mx-auto max-w-7xl px-6">
+        <p class="eyebrow text-center">Interactive Gallery</p>
+        <h2 class="font-display text-4xl md:text-5xl text-center mt-3">Moments Captured in Motion</h2>
+        <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=900&q=80" alt="Luxury ballroom event" /><figcaption>Royal Ballroom Reception</figcaption></figure>
+          <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=900&q=80" alt="Concert stage lights" /><figcaption>Live Concert Atmosphere</figcaption></figure>
+          <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80" alt="VIP rooftop party" /><figcaption>VIP Skyline Party</figcaption></figure>
+          <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="Wedding setup" /><figcaption>Couture Wedding Design</figcaption></figure>
+          <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=900&q=80" alt="Corporate conference" /><figcaption>Executive Corporate Summit</figcaption></figure>
+          <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80" alt="Private evening event" /><figcaption>Private Night Gathering</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="py-24 md:py-32 section-fade">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div>
+            <p class="eyebrow">Featured Events</p>
+            <h2 class="font-display text-4xl md:text-5xl mt-3">Signature Productions</h2>
+          </div>
+          <p class="text-zinc-300 max-w-2xl">A curated selection of large-scale collaborations with hospitality groups, entertainment companies, and private client offices.</p>
+        </div>
+        <div class="mt-12 space-y-5">
+          <article class="featured-item">
+            <h3>Food Africa</h3>
+            <p>International exhibition • F&B sourcing showcase • Premium visitor experience coordination</p>
+          </article>
+          <article class="featured-item">
+            <h3>Cairo ICT</h3>
+            <p>Technology exhibition • Large-scale corporate presence • Multi-partner event execution</p>
+          </article>
+          <article class="featured-item">
+            <h3>Book Fair</h3>
+            <p>Cultural public event • High-footfall audience management • Curated engagement zones</p>
+          </article>
+          <article class="featured-item">
+            <h3>CDIS</h3>
+            <p>Industry-focused conference • Executive networking environment • Branded stage production</p>
+          </article>
+          <article class="featured-item">
+            <h3>Egypt Energy</h3>
+            <p>Global energy exhibition • B2B activation planning • End-to-end venue coordination</p>
+          </article>
+          <article class="featured-item">
+            <h3>Fi Africa</h3>
+            <p>Ingredients expo • International exhibitor operations • VIP hospitality and flow design</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-24 md:py-32 section-fade">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="glass-panel rounded-3xl p-8 md:p-12 shadow-luxe">
+          <p class="eyebrow text-center">Contact</p>
+          <h2 class="font-display text-4xl md:text-5xl text-center mt-3">Let’s Curate Your Next Luxury Event</h2>
+          <div class="mt-6 contact-info-grid">
+            <p><span class="text-champagne">Name:</span> Ahmed Magdy</p>
+            <p><span class="text-champagne">City:</span> Cairo, Egypt</p>
+            <p><span class="text-champagne">Phone:</span> <a href="tel:01026455592" class="text-gold hover:underline">01026455592</a></p>
+            <p><span class="text-champagne">WhatsApp:</span> <a href="https://wa.me/201026455592" class="text-gold hover:underline" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></p>
+          </div>
+          <form id="contactForm" class="mt-10 grid md:grid-cols-2 gap-5">
+            <input class="input-luxe" id="fullName" type="text" placeholder="Full Name" required />
+            <input class="input-luxe" id="emailAddress" type="email" placeholder="Email Address" required />
+            <input class="input-luxe" id="customerPhone" type="tel" placeholder="+201234567890" inputmode="tel" autocomplete="tel" pattern="^\+201\d{9}$" title="Phone must be in this exact format: +201234567890" required />
+            <input class="input-luxe" id="eventType" type="text" placeholder="Event Type" />
+            <input class="input-luxe" id="preferredDate" type="date" aria-label="Preferred Date" />
+            <textarea id="eventVision" class="input-luxe md:col-span-2 min-h-[140px]" placeholder="Tell us about your vision"></textarea>
+            <button type="submit" class="btn-gold md:col-span-2 justify-center">Submit Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gold/20 py-10">
+    <div class="mx-auto max-w-7xl px-6 flex flex-col md:flex-row gap-6 items-center justify-between">
+      <p class="text-sm text-zinc-400">© 2026 MeGGu • Event Management EGYPT</p>
+      <div class="flex gap-3 text-xs uppercase tracking-[0.2em]">
+        <a href="https://www.instagram.com/ahmed.mag.d/" class="social-pill" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
