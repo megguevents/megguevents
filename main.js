@@ -119,7 +119,7 @@ tiltTargets.forEach((el) => {
 
 if (preferredDateInput) {
   const minDate = new Date();
-  minDate.setDate(minDate.getDate() + 4);
+  minDate.setDate(minDate.getDate() + 1);
   const minDateString = minDate.toISOString().split('T')[0];
   preferredDateInput.min = minDateString;
 
