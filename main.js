@@ -19,12 +19,21 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
+let scrollTimeout;
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
   if (!header) return;
-  const scrolled = window.scrollY > 20;
-  header.style.transform = scrolled ? 'translateY(0)' : 'translateY(0)';
-  header.style.filter = scrolled ? 'drop-shadow(0 10px 18px rgba(0,0,0,0.5))' : 'none';
+
+  // Hide the header immediately when scrolling
+  header.style.transform = 'translateY(-100%)';
+  header.style.opacity = '0';
+
+  // Clear timeout to detect when scrolling stops
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    header.style.transform = 'translateY(0)';
+    header.style.opacity = '1';
+  }, 300); // 300ms after scrolling stops
 });
 
 if (window.gsap) {
