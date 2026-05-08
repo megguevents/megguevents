@@ -1,6 +1,7 @@
 ﻿const menuBtn = document.getElementById('menuBtn');
 const menu = document.getElementById('menu');
-const preferredDateInput = document.getElementById('preferredDate');
+const startDateInput = document.getElementById('startDate');
+const endDateInput = document.getElementById('endDate');
 const contactForm = document.getElementById('contactForm');
 
 if (menuBtn) {
@@ -126,25 +127,41 @@ tiltTargets.forEach((el) => {
   });
 });
 
-if (preferredDateInput) {
+if (startDateInput && endDateInput) {
   const minDate = new Date();
   minDate.setDate(minDate.getDate() + 1);
   const minDateString = minDate.toISOString().split('T')[0];
-  preferredDateInput.min = minDateString;
+  
+  startDateInput.min = minDateString;
+  endDateInput.min = minDateString;
 
-  preferredDateInput.addEventListener('focus', () => {
-    if (typeof preferredDateInput.showPicker === 'function') {
-      preferredDateInput.showPicker();
-    }
+  [startDateInput, endDateInput].forEach(input => {
+    input.addEventListener('focus', () => {
+      if (typeof input.showPicker === 'function') {
+        input.showPicker();
+      }
+    });
   });
 
-  preferredDateInput.addEventListener('change', () => {
-    if (preferredDateInput.value && preferredDateInput.value < minDateString) {
-      preferredDateInput.setCustomValidity(`Please choose ${minDateString} or later.`);
-      preferredDateInput.reportValidity();
-    } else {
-      preferredDateInput.setCustomValidity('');
+  startDateInput.addEventListener('change', () => {
+    if (startDateInput.value) {
+      endDateInput.min = startDateInput.value;
+      if (startDateInput.value < minDateString) {
+        startDateInput.setCustomValidity(`Please choose ${minDateString} or later.`);
+      } else {
+        startDateInput.setCustomValidity('');
+      }
     }
+    startDateInput.reportValidity();
+  });
+
+  endDateInput.addEventListener('change', () => {
+    if (endDateInput.value && startDateInput.value && endDateInput.value < startDateInput.value) {
+      endDateInput.setCustomValidity('End date cannot be before start date.');
+    } else {
+      endDateInput.setCustomValidity('');
+    }
+    endDateInput.reportValidity();
   });
 }
 
@@ -161,14 +178,16 @@ if (contactForm) {
     const emailAddressEl = document.getElementById('emailAddress');
     const customerPhoneEl = document.getElementById('customerPhone');
     const eventTypeEl = document.getElementById('eventType');
-    const preferredDateEl = document.getElementById('preferredDate');
+    const startDateEl = document.getElementById('startDate');
+    const endDateEl = document.getElementById('endDate');
     const eventVisionEl = document.getElementById('eventVision');
 
     const fullName = fullNameEl ? fullNameEl.value.trim() : '';
     const emailAddress = emailAddressEl ? emailAddressEl.value.trim() : '';
     const customerPhone = customerPhoneEl ? customerPhoneEl.value.trim() : '';
     const eventType = eventTypeEl && eventTypeEl.value.trim() ? eventTypeEl.value.trim() : 'Not specified';
-    const preferredDate = preferredDateEl && preferredDateEl.value.trim() ? preferredDateEl.value.trim() : 'Not specified';
+    const startDate = startDateEl && startDateEl.value ? startDateEl.value : 'Not specified';
+    const endDate = endDateEl && endDateEl.value ? endDateEl.value : 'Not specified';
     const eventVision = eventVisionEl && eventVisionEl.value.trim() ? eventVisionEl.value.trim() : 'No extra details provided.';
 
     const whatsappNumber = '201026455592';
@@ -178,7 +197,7 @@ if (contactForm) {
       `Email: ${emailAddress}`,
       `Customer Phone: ${customerPhone}`,
       `Event Type: ${eventType}`,
-      `Preferred Date: ${preferredDate}`,
+      `Dates: ${startDate} to ${endDate}`,
       `Vision: ${eventVision}`,
     ].join('\n');
 
